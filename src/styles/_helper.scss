@@ -1,0 +1,18 @@
+/**
+* Image URL Helper
+*/
+
+@function image-url($url) {
+	$url: '../images/' + $url;
+	@return url($url);
+}
+
+/**
+* Container
+*/
+@mixin container {
+	@include outer-container;
+	max-width: 960px;
+	padding-left: 15px;
+	padding-right: 15px;
+}

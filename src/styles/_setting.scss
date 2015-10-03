@@ -1,0 +1,20 @@
+/* Fonts */
+$font-family: Roboto,sans-serif, Times, 'Times New Roman';
+
+
+/* Color */
+$primary-color: #666666;
+$heading-color: #2c2b2b;
+
+/* width */
+$max-width: em(960);
+
+
+/* media breakpoint */
+$mobile: new-breakpoint(max-width 700px 4);
+$tablet: new-breakpoint(max-width 768px 4);
+$netbook: new-breakpoint(max-width 1000px 12);
+
+
+/* spacing */
+$default-spacing: 50px;

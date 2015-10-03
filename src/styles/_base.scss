@@ -1,0 +1,70 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	color: $primary-color;
+	font-family: $font-family;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: -moz-scrollbars-vertical;
+	overflow-y: scroll;
+	margin-top: 0 !important;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.container {
+	@include container;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	line-height: 1.1em;
+}
+
+h2 {
+	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include media($mobile) {
+		font-size: 20px;
+	}
+}
+
+h3 {
+	font-size: 20px;
+
+	@include media($mobile) {
+		font-size: 16px;
+	}
+}
+
+h4 {
+	font-size: 14px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.4em;
+	text-align: center;
+
+	@include media($mobile) {
+		font-size: 15px;
+	}
+}
+
+.fixed-top {
+	padding-top: 70px;
+}
+
+
+
+
+
+
