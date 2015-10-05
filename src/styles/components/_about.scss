@@ -1,6 +1,11 @@
 .about {
 	padding-top: $default-spacing;
 	padding-bottom: $default-spacing;
+
+	@include media($mobile) {
+		padding-top: $default-spacing/2;
+		padding-bottom: $default-spacing/2;
+	}
 }
 
 .about-content {
@@ -12,5 +17,9 @@
 		&:last-child {
 			margin-bottom: 0;
 		}
+	}
+
+	@include media($tablet) {
+		padding: 0;
 	}
 }

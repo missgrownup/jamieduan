@@ -1,21 +1,31 @@
-SLIDEWIDTH = 800;
-
 module.exports = function(element) {
 	var element = $(element),
+		slideWindow = $('.slide-window', element),
 		slideList = $('.slide-list', element),
 		slides = $('.slide', element),
 		slidesLength = slides.length,
 		paginationSection = $('.paginations', element),
 		n = 0,
-		timeout;
+		timeout,
+		timeoutResize,
+		slideWith;
 
-	slideList.width(SLIDEWIDTH * slidesLength);
+	$(window).on('resize', function(e) {
+		clearTimeout(timeoutResize);
+
+		timeoutResize = setTimeout(function () {
+			setWidth();
+			autoPlay;
+		}, 300);
+	})
+	.trigger('resize');
 
 	slides.each(function() {
 		$(this).attr("data-count", n);
 		n++;
 	});
 
+	setWidth();
 	makePagination();
 	setSlide(0);
 
@@ -34,6 +44,11 @@ module.exports = function(element) {
 		setSlide($(this).data('count'));
 	})
 
+	function setWidth() {
+		slideWidth = slideWindow.width();
+		$('img', slideList).width(slideWidth);
+		slideList.width(slideWidth * slidesLength);
+	}
 
 	function autoPlay() {
 		clearTimeout(timeout);
@@ -63,12 +78,24 @@ module.exports = function(element) {
 	}
 
 	function setSlide(index) {
-		var paginations = $('a', paginationSection);
+		var paginations = $('a', paginationSection),
+			current = slides.filter('[data-count=' + index + ']');
 
 		$('.current', element).removeClass('current');
-		slideList.css('left', - index * SLIDEWIDTH);
-		slides.filter('[data-count=' + index + ']').addClass('current');
+
+		slides.not('.current').find('.slide-name, .slide-place').removeClass('is-show');
+
+		slideList.css('left', - index * slideWidth);
+		current.addClass('current');
 		paginations.filter('[data-count=' + index + ']').addClass('current');
+		setTimeout(function() {
+			$('.slide-name', current).addClass('is-show');
+		}, 800);
+
+		setTimeout(function() {
+			$('.slide-place', current).addClass('is-show');
+		}, 1500);
+
 		autoPlay();
 	}
 
@@ -81,14 +108,4 @@ module.exports = function(element) {
 				}).appendTo(paginationSection);
 		}
 	}
-}
-
-
-
-
-
-
-
-
-
-
+};

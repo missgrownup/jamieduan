@@ -10,6 +10,7 @@ $teal: #00acb8;
 $mobile: new-breakpoint(max-width 700px 4);
 $tablet: new-breakpoint(max-width 768px 4);
 $netbook: new-breakpoint(max-width 1000px 12);
+$desktop: new-breakpoint(min-width 768px 12);
 
 /* spacing */
 $default-spacing: 60px;

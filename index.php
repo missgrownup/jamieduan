@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="cover">
-			<?php include './src/components/home.html'; ?>
+
 		</div>
 		<div id="page" class="fixed-top">
 			<?php include './src/components/header.html'; ?>

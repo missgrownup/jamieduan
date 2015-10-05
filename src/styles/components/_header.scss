@@ -20,6 +20,11 @@ header {
 
 .navbar-header {
 	float: left;
+
+	@include media($mobile) {
+		float: none;
+		display: inline-block;
+	}
 }
 
 .navbar-header__avatar {
@@ -56,6 +61,9 @@ header {
 	float: right;
 	list-style: none;
 	margin-top: 14px;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
 
 	li {
 		float: left;
@@ -71,6 +79,87 @@ header {
 			&:hover {
 				color: $teal;
 			}
+		}
+	}
+
+	@include media(min-width 701px) {
+		display: block !important;
+	}
+
+	@include media($desktop) {
+		display: block !important;
+	}
+
+	@include media($mobile) {
+		display: none;
+		float: none;
+		padding-top: 10px;
+		border-top: 1px solid rgba($primary-color, 0.2);
+
+		li {
+			float: none;
+			display: inline-block;
+			width: percentage(1/3);
+			margin: 0;
+		}
+	}
+}
+
+.nav-burger {
+	display: none;
+	//float: right;
+	position: absolute;
+	height: 22px;
+	width: 22px;
+	text-align: center;
+	top: 15px;
+	right: 10px;
+
+	@include media($mobile) {
+		display: inline-block;
+	}
+
+	.nav-line {
+		display: inline-block;
+		height: 3px;
+		width: 18px;
+		background-color: $heading-color;
+		position: absolute;
+		top: 10px;
+		left: 0;
+
+		&.is-open {
+			background-color: transparent;
+
+			&:after {
+				top: 0;
+				transform: rotate(-45deg);
+			}
+
+			&:before {
+				top: 0;
+				transform: rotate(45deg);
+			}
+		}
+
+		&:before, &:after {
+			content: " ";
+			height: 3px;
+			width: 18px;
+			display: block;
+			background-color: $heading-color;
+			position: absolute;
+			left: 0;
+			transition-property: top, transform;
+			transition-duration: .2s;
+		}
+
+		&:after {
+			top: 7px;
+		}
+
+		&:before {
+			top: -7px;
 		}
 	}
 }

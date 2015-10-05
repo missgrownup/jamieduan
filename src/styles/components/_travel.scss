@@ -1,25 +1,41 @@
 .travel {
 	padding-top: $default-spacing;
 	padding-bottom: $default-spacing;
+
+	@include media($mobile) {
+		padding-top: $default-spacing/2;
+		padding-bottom: $default-spacing/2;
+	}
 }
 
 .travel-desc {
 	padding: 0 75px;
+
+	@include media($mobile) {
+		padding: 0;
+	}
 }
 
 .slide-window {
 	width: 800px;
-	height: 400px;
 	overflow: hidden;
 	position: relative;
+	margin: 0 auto;
+
+	@include media($netbook) {
+		width: 100%;
+		//height: auto;
+	}
 }
 
 .slide-show {
+	position: relative;
+
 	.previous, .next {
 		display: block;
 		width: 30px;
 		height: 30px;
-		border: 2px solid rgba(#fff, 0.5);
+		border: 2px solid rgba(#ffffff, 0.5);
 		border-radius: 50%;
 		position: absolute;
 		z-index: 5;
@@ -32,48 +48,55 @@
 			height: 8px;
 			display: block;
 			position: absolute;
-			border: 2px solid rgba(#fff, 0.5);
+			border: 2px solid rgba(#ffffff, 0.5);
 			border-left-width: 0;
 			border-bottom-width: 0;
 		}
 
 		&:hover {
-			border-color: rgba(#fff, 0.8);
+			border-color: rgba(#ffffff, 0.8);
 
 			&:after {
-				border-color: rgba(#fff, 0.8);
+				border-color: rgba(#ffffff, 0.8);
 			}
 		}
 	}
 
 	.previous {
-		left: 10px;
+		left: 30px;
 
 		&:after {
 			left: 10px;
 			top: 9px;
 			transform: rotate(-135deg);
 		}
+
+		@include media($mobile) {
+			left: 15px;
+		}
 	}
 
 	.next {
-		right: 10px;
+		right: 30px;
 
 		&:after {
 			left: 8px;
 			top: 9px;
 			transform: rotate(45deg);
 		}
+
+		@include media($mobile) {
+			right: 15px;
+		}
 	}
 }
 
 .slide-list {
-	height: 400px;
 	list-style: none;
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	overflow: hidden;
@@ -81,13 +104,60 @@
 
 	li {
 		float: left;
+		position: relative;
+	}
+
+	@include media($mobile) {
+		height: auto;
+	}
+
+	.slide-name, .slide-place {
+		position: absolute;
+		display: block;
+		z-index: 10px;
+		left: 30px;
+		padding: 0;
+		background-color: rgba(#f4a01c, 0.5);
+		border-radius: 3px;
+		color: #fff;
+		font-size: 0;
+		transition-property: padding, font-size;
+		transition: all, 1s, linear;
+
+		&.is-show {
+			padding: 5px 10px;
+			font-size: 15px;
+			line-height: 1.2;
+
+			@include media($mobile) {
+				padding: 3px 5px;
+				font-size: 10px;
+				left: 15px;
+			}
+		}
+	}
+
+	.slide-name {
+		bottom: 70px;
+
+		@include media($mobile) {
+			bottom: 45px;
+		}
+	}
+
+	.slide-place {
+		bottom: 30px;
+
+		@include media($mobile) {
+			bottom: 20px;
+		}
 	}
 }
 
 .paginations {
 	overflow: hidden;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 15px;
 
 	.pagination {
 		padding: 0;
@@ -115,10 +185,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-

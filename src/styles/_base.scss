@@ -34,7 +34,8 @@ h2 {
 	margin: 0 0 30px;
 
 	@include media($mobile) {
-		font-size: 20px;
+		font-size: 30px;
+		margin: 0 0 15px;
 	}
 }
 
@@ -67,11 +68,5 @@ li {
 }
 
 .fixed-top {
-	padding-top: 120px;
+	padding-top: 80px;
 }
-
-
-
-
-
-
