@@ -1,0 +1,53 @@
+.projects {
+	background-color: #f3f3f0;
+	padding: $default-spacing 0;
+}
+
+.projects-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	.project {
+		text-align: center;
+		margin-bottom: 35px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.project-screenshot {
+		overflow: hidden;
+
+		img {
+			width: 800px;
+		}
+
+		&.edms-screenshot {
+			img {
+				width: 350px;
+				@include span-columns(6);
+
+				@include media($mobile) {
+					@include span-columns(4);
+				}
+			}
+		}
+	}
+}
+
+.project-features {
+	margin-top: 20px;
+	text-align: left;
+	padding-left: 30px;
+
+	li {
+		margin-bottom: 10px;
+		padding-left: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -45,14 +45,15 @@
 
 	gulp.task('images', function() {
 		return gulp.src(source + 'images/**/*')
-			.pipe(gulp.dest(destination + 'scripts'))
+			.pipe(gulp.dest(destination + 'images'))
 			.on('error', errorHandler);
 	});
 
 	gulp.task('scripts', function() {
 
 		gulp.src([
-				source + 'bower_components/jquery/dist/jquery.js'
+				source + 'bower_components/jquery/dist/jquery.min.js',
+				source + 'bower_components/jquery-validation/dist/jquery.validate.min.js'
 			])
 			.pipe(concat('vendor.js'))
 			.pipe(uglify())

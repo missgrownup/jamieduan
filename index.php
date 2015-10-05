@@ -8,16 +8,18 @@
 	</head>
 	<body>
 		<div id="cover">
+			<?php include './src/components/home.html'; ?>
 		</div>
 		<div id="page" class="fixed-top">
 			<?php include './src/components/header.html'; ?>
 			<?php include './src/components/about.html'; ?>
-			<?php include './src/components/skills.html'; ?>
 			<?php include './src/components/projects.html'; ?>
+			<?php include './src/components/skills.html'; ?>
 			<?php include './src/components/travel.html'; ?>
 			<?php include './src/components/contact.html'; ?>
 			<?php include './src/components/footer.html'; ?>
 		</div>
-	<script src="assets/scripts/main.js" type="text/javascript"></script>
+	<script src="./assets/scripts/vendor.js" type="text/javascript"></script>
+	<script src="./assets/scripts/main.js" type="text/javascript"></script>
 	</body>
 </html>

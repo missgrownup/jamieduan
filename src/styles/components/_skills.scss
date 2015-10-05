@@ -1,0 +1,22 @@
+.skills {
+	padding-top: $default-spacing;
+	padding-bottom: $default-spacing;
+}
+
+.skillset {
+	@include span-columns(4);
+	margin: 0;
+	padding-left: 100px;
+
+	@include media($mobile) {
+		@include span-columns(4);
+	}
+
+	li {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

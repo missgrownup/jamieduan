@@ -12,7 +12,17 @@
 */
 @mixin container {
 	@include outer-container;
-	max-width: 960px;
+	max-width: 830px;
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+/**
+* Placeholder
+*/
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
 }

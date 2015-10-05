@@ -9,7 +9,8 @@ header {
 	margin-bottom: 50px;
 
 	.container {
-		padding: 6px 0;
+		padding-top: 6px;
+		padding-bottom: 6px;
 	}
 }
 
@@ -27,7 +28,9 @@ header {
 	height: 45px;
 	width: 45px;
 	border-radius: 50%;
-	background: url("http://placehold.it/50x50")
+	background: url("../images/avatar.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .navbar-header__desc {
@@ -39,18 +42,20 @@ header {
 .navbar-header {
 	h3 {
 		margin: 0 0 2px;
+		text-align: left;
 	}
 
 	h4 {
 		margin: 0;
 		font-weight: normal;
+		text-align: left;
 	}
 }
 
 .navbar-menu {
 	float: right;
-
 	list-style: none;
+	margin-top: 14px;
 
 	li {
 		float: left;
@@ -64,7 +69,7 @@ header {
 			font-weight: 300;
 
 			&:hover {
-				color: #097792;
+				color: $teal;
 			}
 		}
 	}

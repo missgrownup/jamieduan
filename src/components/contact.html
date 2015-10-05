@@ -1,14 +1,26 @@
-<div class="contact">
+<div class="contact" id="contact">
 	<div class="container">
-		<h2>contact.</h2>
+		<h2>Get in touch with me.</h2>
 		<form id="contact-form">
-			<input class="form-group" type="text" placeholder="Name" name="name">
-			<input class="form-group" type="text" placeholder="Email" name="email">
-			<input class="form-group" type="text" placeholder="Subject" name="subject">
-			<input class="form-group" type="textarea" placeholder="Message" name="message">
-			<button type="submit">
-				<span>send message</span>
-			</button>
+			<div class="form-group">
+				<input type="text" placeholder="Name" name="name">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Email" name="email">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Subject" name="subject">
+			</div>
+			<div class="form-group">
+				<textarea type="text" placeholder="Message" name="message"></textarea>
+			</div>
+			<a class="submit-btn"><span>send message</span></a>
 		</form>
+		<div class="succeed">
+			Thank you for contacting me! <br>I'll get back to you soon. 
+		</div>
+		<div class="fail">
+			The message was not sent, please try again later. 
+		</div>
 	</div>
 </div>

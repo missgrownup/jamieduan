@@ -1,0 +1,95 @@
+.contact {
+	background-color: $teal;
+	padding: $default-spacing;
+
+	.container {
+		transition: max-height 1s ease-in;
+		max-height: auto;
+	}
+
+	h2 {
+		color: #fff;
+	}
+
+	form {
+		&.is-hide {
+			display: none;
+		}
+	}
+
+	.form-group {
+		display: block;
+		margin: 0 auto;
+		width: 520px;
+		margin-bottom: 15px;
+
+		input, textarea {
+			@include placeholder {
+				font-size: 15px;
+				font-weight: 300;
+				color: #fff;
+				font-family: $font-family;
+			}
+			color: #fff !important;
+			padding: 10px;
+			font-size: 15px;
+			width: 100%;
+			background-color: $teal;
+			border: 2px solid #fff;
+		}
+
+		label.error {
+			font-size: 14px;
+			margin-top: 8px;
+			display: block;
+			color: #fff;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	textarea {
+		height: 140px;
+		resize: none;
+		font-family: $font-family;
+	}
+
+	.submit-btn {
+		width: 520px;
+		padding: 16px 0 12px;
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+		cursor: pointer;
+		transition: (background-color, .2s, ease-out);
+		transition: (color, .2s, ease-in);
+		border: 2px solid #fff;
+		background: #fff;
+		color: $teal;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $teal;
+			border: 2px solid #fff;
+			color: #fff;
+		}
+	}
+
+	.succeed, .fail {
+		font-size: 0;
+		opacity: 0;
+		transition: opacity .3s ease-in;
+		color: #fff;
+		text-align: center;
+		line-height: 1.5em;
+
+		&.is-show {
+			font-size: 24px;
+			opacity: 1;
+		}
+	}
+}
