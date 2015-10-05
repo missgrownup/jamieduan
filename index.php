@@ -8,7 +8,6 @@
 	</head>
 	<body>
 		<div id="cover">
-
 		</div>
 		<div id="page" class="fixed-top">
 			<?php include './src/components/header.html'; ?>

@@ -6,7 +6,7 @@ header {
 	width: 100%;
 	z-index: 999;
 	background-color: #fff;
-	margin-bottom: 50px;
+	//margin-bottom: 50px;
 
 	.container {
 		padding-top: 6px;
@@ -94,6 +94,7 @@ header {
 		display: none;
 		float: none;
 		padding-top: 10px;
+		text-align: left;
 		border-top: 1px solid rgba($primary-color, 0.2);
 
 		li {
