@@ -5,6 +5,7 @@
 		<title>Jamie Duan | Front End Developer, Melbourne</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link href="assets/styles/main.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="./assets/images/favicon.png">
 	</head>
 	<body>
 		<div id="cover">

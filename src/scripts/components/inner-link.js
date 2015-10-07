@@ -22,7 +22,7 @@ module.exports = function(element) {
 
 			if(navLine.hasClass('is-open')) {
 				navLine.removeClass('is-open');
-				element.slideToggle('hide');
+				$('.navbar-menu', element).slideToggle('hide');
 			}
 		});
 };

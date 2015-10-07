@@ -134,12 +134,12 @@ header {
 
 			&:after {
 				top: 0;
-				transform: rotate(-45deg);
+				@include transform(rotate(-45deg));
 			}
 
 			&:before {
 				top: 0;
-				transform: rotate(45deg);
+				@include transform(rotate(45deg));
 			}
 		}
 

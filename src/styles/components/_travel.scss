@@ -68,7 +68,7 @@
 		&:after {
 			left: 10px;
 			top: 9px;
-			transform: rotate(-135deg);
+			@include transform(rotate(-135deg));
 		}
 
 		@include media($mobile) {
@@ -82,7 +82,7 @@
 		&:after {
 			left: 8px;
 			top: 9px;
-			transform: rotate(45deg);
+			@include transform(rotate(45deg));
 		}
 
 		@include media($mobile) {
