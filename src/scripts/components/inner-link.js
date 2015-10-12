@@ -7,6 +7,8 @@ module.exports = function(element) {
 
 	$('a[href = "#about"]', element).addClass('active');
 
+	navOnScroll();
+
 	links.on('click', function(e) {
 		e.preventDefault();
 		var hash = this.hash,
@@ -39,22 +41,26 @@ module.exports = function(element) {
 		clearTimeout(timeout);
 
 		timeout = setTimeout(function() {
-			var scrollPos = $('html, body').scrollTop();
-
-			links.each(function() {
-				var currLink = $(this),
-					refSection = $(currLink.attr('href')),
-					refTop = refSection.offset().top;
-
-				if ((Math.floor(refTop) - offset) <= scrollPos && (refTop + refSection.outerHeight()) > scrollPos) {
-					links.each(function() {
-						$(this).removeClass('active');
-					});
-					currLink.addClass('active');
-				} else {
-					currLink.removeClass('active');
-				}
-			});
+			navOnScroll();
 		}, 100);
-	})
+	});
+
+	function navOnScroll() {
+		var scrollPos = $('html, body').scrollTop();
+
+		links.each(function() {
+			var currLink = $(this),
+				refSection = $(currLink.attr('href')),
+				refTop = refSection.offset().top;
+
+			if ((Math.floor(refTop) - offset) <= scrollPos && (refTop + refSection.outerHeight()) > scrollPos) {
+				links.each(function() {
+					$(this).removeClass('active');
+				});
+				currLink.addClass('active');
+			} else {
+				currLink.removeClass('active');
+			}
+		});
+	}
 };
