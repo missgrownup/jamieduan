@@ -46,7 +46,7 @@ module.exports = function(element) {
 	});
 
 	function navOnScroll() {
-		var scrollPos = $('html, body').scrollTop();
+		var scrollPos = $('body').scrollTop();
 
 		links.each(function() {
 			var currLink = $(this),
