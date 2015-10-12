@@ -79,6 +79,10 @@ header {
 			&:hover {
 				color: $teal;
 			}
+
+			&.active {
+				color: $teal;
+			}
 		}
 	}
 
